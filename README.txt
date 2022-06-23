@@ -14,7 +14,7 @@ To run :
 
 Step 1 : Starting up the MongoDB daemon  
  - Open up a terminal
- - CD inside the assignment folder
+ - CD inside the Food-Ordering-Application-master folder
  - Create a directory called "database"
  - Type mongod --dbpath=database and press enter
 
