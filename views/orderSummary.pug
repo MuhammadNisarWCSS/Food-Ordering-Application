@@ -1,0 +1,55 @@
+html
+    head
+        title Order Form
+
+        style(type="text/css").
+            p {
+                display:inline
+            }
+	
+	
+    body
+        if loginStatus
+            a(href="http://localhost:3000") Home    
+            a(href="http://localhost:3000/users") Users   
+            a(href="http://localhost:3000/orderform") Order form
+            a(href="http://localhost:3000/users/" + userID) User profile
+            button(type="button" onclick="logoutSubmit()") Logout
+
+        else 
+            a(href="http://localhost:3000") Home    
+            a(href="http://localhost:3000/users") Users   
+            a(href="http://localhost:3000/register") Registration 
+            br
+            label(for="loginUsername")   Username : 
+            input(type="text" name="username" id="loginUsername" required)
+            label(for="loginPassword")   Password : 
+            input(type="password" name="password" id="loginPassword" required) 
+            button(type="button" onclick="loginSubmit()") Login            
+
+
+
+        br
+        br
+        h1 Order ##{orderInfo._id}
+        br
+        p Restaurant Name: #{orderInfo.order.restaurantName}
+        br
+        br
+        p Order contents: 
+        for i in orderInfo.order.order 
+            br
+            p #{i.name} x #{i.quantity}
+
+        br
+        br
+        p Subtotal: #{orderInfo.order.subtotal}
+        br
+        p Tax: #{orderInfo.order.tax}
+        br
+        p Delivery Fee: #{orderInfo.order.fee}
+        br
+        p Total: #{orderInfo.order.total}
+
+    script(src="/login.js")
+    script(src="/logout.js")

@@ -1,0 +1,39 @@
+html 
+  head
+    title Home
+
+
+  body
+
+    if loginStatus 
+      p Already logged in
+
+    else
+      a(href="http://localhost:3000") Home    
+      a(href="http://localhost:3000/users") Users   
+      a(href="http://localhost:3000/register") Registration 
+      br
+      label(for="loginUsername")   Username : 
+      input(type="text" name="username" id="loginUsername" required)
+      label(for="loginPassword")   Password : 
+      input(type="password" name="password" id="loginPassword" required) 
+      button(type="button" onclick="loginSubmit()") Login
+
+      br
+      br
+
+      label(for="registerUsername")   Username : 
+      input(type="text" name="username" id="registerUsername" required)
+      br
+      label(for="registerPassword")   Password : 
+      input(type="password" name="password" id="registerPassword" required) 
+      br
+      button(type="button" onclick="registerSubmit()") Register
+
+
+    script(src="/register.js")
+    script(src="/login.js")
+      
+    
+
+

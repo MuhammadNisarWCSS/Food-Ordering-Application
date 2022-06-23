@@ -1,0 +1,41 @@
+html 
+  head
+    title Home
+
+
+  body
+
+    if loginStatus 
+      a(href="http://localhost:3000") Home    
+      a(href="http://localhost:3000/users") Users   
+      a(href="http://localhost:3000/orderform") Order form
+      a(href="http://localhost:3000/users/" + userID) User profile
+      button(type="button" onclick="logoutSubmit()") Logout
+            
+
+
+    else
+      a(href="http://localhost:3000") Home    
+      a(href="http://localhost:3000/users") Users   
+      a(href="http://localhost:3000/register") Registration 
+      br
+      label(for="loginUsername")   Username : 
+      input(type="text" name="username" id="loginUsername" required)
+      label(for="loginPassword")   Password : 
+      input(type="password" name="password" id="loginPassword" required) 
+      button(type="button" onclick="loginSubmit()") Login
+
+
+    ul
+      for i in JSON.parse(Users)
+
+        if !i.privacy
+
+          li 
+            a(href='/users/'+ i.id)=i.username
+
+    script(src="/logout.js")
+    script(src="/login.js")
+
+      
+    
