@@ -3,7 +3,7 @@ Author : Muhammad Nisar
 A food ordering application.
 To start ordering, register for an account or if you're a returning user, log in.
 Once you place an order, your order history is stored on the User Profile page, where all your previous orders are displayed. 
-On the User Profile page, you can opt to order make your account private by clicking on the "Toggle privacy" button.
+On the User Profile page, you can opt to make your account private by clicking on the "Toggle privacy" button.
 With a private account, your account will no longer show up on Users page.
 
 Registration and authentication info is stored in the MongoDB database.
